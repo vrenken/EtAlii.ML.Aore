@@ -1,0 +1,11 @@
+﻿<!-- Stuff that needs to happen at the end of the MSBuild process should go in the .targets file. -->
+<Project>
+  <PropertyGroup>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The .DotSettings file is maintained by Rider/Resharper - no need to show it. -->
+    <None Remove="*.csproj.DotSettings" />
+  </ItemGroup>
+
+</Project>

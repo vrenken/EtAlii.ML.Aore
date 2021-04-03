@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Globals", "_Globals", "{1F907191-6B80-424D-8517-C5E8F937C476}"
+ProjectSection(SolutionItems) = preProject
+	..\.editorconfig = ..\.editorconfig
+	..\.gitattributes = ..\.gitattributes
+	..\.gitignore = ..\.gitignore
+	..\LICENSE = ..\LICENSE
+	..\README.md = ..\README.md
+	Global.json = Global.json
+	Directory.Build.props = Directory.Build.props
+	Directory.Build.targets = Directory.Build.targets
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtAlii.ML.Aore.Service", "EtAlii.ML.Aore.Service\EtAlii.ML.Aore.Service.csproj", "{2E7030ED-BE8F-4CC2-B037-440DC9C11A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtAlii.ML.Aore.Admin", "EtAlii.ML.Aore.Admin\EtAlii.ML.Aore.Admin.csproj", "{AD24DD3C-D0DE-41C4-8E31-B0A52565580E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtAlii.ML.Aore.Client", "EtAlii.ML.Aore.Client\EtAlii.ML.Aore.Client.csproj", "{1C44DCAB-32F5-4940-87ED-07D4DEF6814F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E7030ED-BE8F-4CC2-B037-440DC9C11A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7030ED-BE8F-4CC2-B037-440DC9C11A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7030ED-BE8F-4CC2-B037-440DC9C11A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7030ED-BE8F-4CC2-B037-440DC9C11A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD24DD3C-D0DE-41C4-8E31-B0A52565580E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD24DD3C-D0DE-41C4-8E31-B0A52565580E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD24DD3C-D0DE-41C4-8E31-B0A52565580E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD24DD3C-D0DE-41C4-8E31-B0A52565580E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C44DCAB-32F5-4940-87ED-07D4DEF6814F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C44DCAB-32F5-4940-87ED-07D4DEF6814F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C44DCAB-32F5-4940-87ED-07D4DEF6814F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C44DCAB-32F5-4940-87ED-07D4DEF6814F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

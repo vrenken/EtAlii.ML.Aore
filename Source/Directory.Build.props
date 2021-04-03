@@ -1,0 +1,31 @@
+﻿<!-- Stuff that needs to happen at the start of the MSBuild process should go in the .props file. -->
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>1.0.0.7</VersionPrefix>
+    <PackageVersion Condition="'$(VersionSuffix)' == ''">$(VersionPrefix)</PackageVersion>
+    <PackageVersion Condition="'$(VersionSuffix)' != ''">$(VersionPrefix)-$(VersionSuffix)</PackageVersion>
+    <Version>$(PackageVersion)</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Peter Vrenken</Authors>
+    <Copyright>Copyright ©2021 Peter Vrenken</Copyright>
+    <Company>EtAlii</Company>
+    <Product>EtAlii.ML.Aore</Product>
+    <PackageProjectUrl>https://github.com/vrenken/EtAlii.ML.Aore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vrenken/EtAlii.ML.Aore</RepositoryUrl>
+
+    <LangVersion>9</LangVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+
+    <NoWarn>CA1822</NoWarn> <!-- [CA1822] Mark members as static, however as we aim to use as few static keywords as possible this is a false alarm. -->
+    <NoWarn>$(NoWarn);AD0001</NoWarn> <!-- In SonarQube step of the build process: CSC : warning AD0001: Analyzer 'SonarAnalyzer.Rules.CSharp.CbdeHandlerRule' threw an exception of type 'SonarAnalyzer.CBDE.CbdeException' with message 'Top level error in CBDE handling -->
+  </PropertyGroup>
+
+  <!-- Analysis, code conventions and standardization. -->
+  <PropertyGroup>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>true</WarningsAsErrors>
+    <AnalysisLevel>5.0</AnalysisLevel>
+  </PropertyGroup>
+
+</Project>
+
