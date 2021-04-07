@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+    <PackageReference Include="EtAlii.Generators.Stateless" Version="1.0.11" />
+    <PackageReference Include="FileContextCore" Version="3.4.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.36.0" />
+    <PackageReference Include="Grpc.HealthCheck" Version="2.36.4" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="stateless" Version="5.10.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +39,27 @@
     <Compile Update="Aspects\AspectsGrpcService.cs">
       <DependentUpon>AspectsGrpcService.proto</DependentUpon>
     </Compile>
+    <Compile Update="System\SystemContext.cs">
+      <DependentUpon>SystemContext.puml</DependentUpon>
+    </Compile>
+    <Compile Update="System\SystemContext.Aspects.cs">
+      <DependentUpon>SystemContext.puml</DependentUpon>
+    </Compile>
+    <Compile Update="System\SystemContext.Projects.cs">
+      <DependentUpon>SystemContext.puml</DependentUpon>
+    </Compile>
+    <Compile Update="System\SystemContext.Starting.cs">
+      <DependentUpon>SystemContext.puml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Concepts\_Model" />
+    <Folder Include="Projects\_Model" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <StatelessFile Include="System\SystemContext.puml" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,56 @@
+@startuml
+'stateless namespace EtAlii.ML.Aore.Service
+'stateless class SystemContextBase
+
+'scale 350 width
+
+state Idle
+
+state Starting {
+  state StartingDatabase
+  state StartingHosting
+  state WaitingForGrpcServices
+  state WaitingForWorkerServices
+  [*] --> StartingDatabase << async >>
+  StartingDatabase --> StartingHosting << async >> : Continue
+  StartingHosting --> WaitingForGrpcServices << async >> : Continue
+  WaitingForGrpcServices --> WaitingForWorkerServices << async >> : Continue
+  WaitingForWorkerServices --> [*] << async >> : Continue
+}
+
+[*] --> Starting << async (string[] commandLineArguments) >>: Start
+Starting --> Idle
+
+state ManagingAspects {
+    AddingAspect --> [*] : AspectAdded
+    RemovingAspect --> [*] : AspectRemoved
+}
+ManagingAspects -> Idle : Ready
+
+state ManagingConcepts {
+    state AddingConcept
+    state RemovingConcept
+    AddingConcept --> [*] : ConceptAdded
+    RemovingConcept --> [*] : ConceptRemoved
+}
+ManagingConcepts -> Idle : Ready
+
+state ManagingProjects {
+    state AddingProject
+    state RemovingProject
+    state AddingImagesToProject
+    AddingProject --> [*] : ProjectAdded
+    RemovingProject --> [*] : ProjectRemoved
+    AddingImagesToProject --> [*] : ImagesAddedToProject
+}
+ManagingProjects -> Idle : Ready
+
+Idle -> AddingProject : AddProject
+Idle -> RemovingProject : RemoveProject
+Idle -> AddingImagesToProject : AddImagesToProject
+Idle -> AddingAspect : AddAspect
+Idle -> RemovingAspect : RemoveAspect
+Idle --> AddingConcept : AddConcept
+Idle --> RemovingConcept : RemoveConcept
+
+@enduml
