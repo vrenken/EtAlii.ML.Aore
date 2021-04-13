@@ -1,0 +1,12 @@
+@startuml
+'stateless namespace EtAlii.ML.Aore.Service
+'stateless class AspectsContextBase
+
+'scale 350 width
+
+state Idle
+state Starting
+
+[*] --> Starting : Start
+Starting --> Idle : Continue
+@enduml

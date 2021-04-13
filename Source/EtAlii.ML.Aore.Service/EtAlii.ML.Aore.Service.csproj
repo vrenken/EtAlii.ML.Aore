@@ -5,10 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EtAlii.Generators.Stateless" Version="1.0.11" />
+    <PackageReference Include="EtAlii.Generators.EntityFrameworkCore" Version="1.0.14" />
+    <PackageReference Include="EtAlii.Generators.Stateless" Version="1.0.14" />
     <PackageReference Include="FileContextCore" Version="3.4.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.36.0" />
-    <PackageReference Include="Grpc.HealthCheck" Version="2.36.4" />
+    <PackageReference Include="Grpc.HealthCheck" Version="2.37.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="stateless" Version="5.10.1" />
   </ItemGroup>
@@ -51,15 +52,28 @@
     <Compile Update="System\SystemContext.Starting.cs">
       <DependentUpon>SystemContext.puml</DependentUpon>
     </Compile>
+    <Compile Update="Aspects\AspectsContext.cs">
+      <DependentUpon>AspectsContext.puml</DependentUpon>
+    </Compile>
   </ItemGroup>
   
   <ItemGroup>
     <Folder Include="Concepts\_Model" />
-    <Folder Include="Projects\_Model" />
   </ItemGroup>
   
   <ItemGroup>
+    <StatelessFile Include="Aspects\AspectsContext.puml" />
     <StatelessFile Include="System\SystemContext.puml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EfCoreModel Include="System\Database\AoreDbContext.puml" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,50 @@
+@startuml
+
+'efcore namespace EtAlii.ML.Aore.Service
+'efcore entity EntityBase
+'efcore dbcontext AoreDbContextBase
+'efcore interface IAoreDbContext
+
+'efcore map 'From' 'Sent'
+Message "1" --* "0..n" User
+
+'efcore map 'To' 'Received'
+Message "1" --* "0..n" User
+
+'efcore map 'Tweets' 'User'
+User "0..n" *-- "1" Tweet
+
+'efcore map 'Tweet' 'Image'
+Image "1" -- "0..1" Tweet
+
+'efcore map 'Users'
+class User
+{
+    +Name: string
+    -Email: string
+    Sent: Message[]
+    Received: Message[]
+    Tweets: Tweet[]
+}
+
+'efcore map 'Messages'
+class Message {
+    +Text: string
+    From: User
+    To: User
+}
+
+'efcore map 'Tweets'
+class Tweet{
++Text: string
++User: User
+Image: Image
+}
+
+'efcore map 'Images'
+class Image{
++Data: byte[]
+Tweet: Tweet
+}
+
+@enduml
